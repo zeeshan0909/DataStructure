@@ -14,4 +14,7 @@ public class FibonacciSequence {
 		.map(x -> x[0])
 		.forEach(System.out::println);
 	}
+
+public static void m1(){
+System.out.println("TEST");
 }
