@@ -15,6 +15,4 @@ public class FibonacciSequence {
 		.forEach(System.out::println);
 	}
 
-public static void m1(){
-System.out.println("TEST");
 }
