@@ -14,7 +14,7 @@ class Node{
 class MyList{
 	
 	Node head;
-	
+	int size = 0;
 	MyList(){
 		head = null;
 	}
@@ -40,7 +40,7 @@ class MyList{
 			while(curr.next != null) {
 				curr = curr.next;
 			}
-			curr = node;
+			curr.next = node;
 		}
 	} 
 	
@@ -49,7 +49,7 @@ class MyList{
 			System.out.println("list is empty");
 		
 		Node curr = head;
-		while(curr.next != null) {
+		while(curr != null) {
 			System.out.print(curr.data + " ");
 			curr = curr.next;
 		}
@@ -57,12 +57,39 @@ class MyList{
 		System.out.print("null");
 	}
 	
+	public void deleteFirst() {
+		if(head == null) {
+			System.out.println("linkedlist is null");
+			return;
+		}
+		size--;
+		System.out.println("delete element is : " + head);
+		head = head.next;
+	}
 	
+	public void deleteLast() {
+		if(head == null) {
+			System.out.println("list is empty");
+			return;
+		}
+		Node secondlast = head;
+		Node last = head.next;
+		while(last.next != null) {
+			last = last.next;
+			secondlast = secondlast.next;
+		}
+		secondlast.next = null;
+	}
 }
 
 
 public class LinkedList {
 	public static void main(String[] args) {
+		MyList ll = new MyList();
+				ll.addLast(10);
+				ll.addLast(20);
+				ll.addLast(30);
+				ll.printList();
 		
 	}
 
