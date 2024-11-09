@@ -79,6 +79,7 @@ class MyList{
 			secondlast = secondlast.next;
 		}
 		secondlast.next = null;
+		size--;
 	}
 }
 
